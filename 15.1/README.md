@@ -28,9 +28,10 @@
    ```
     и убедиться, что есть доступ к интернету.
 
+![изображение](https://github.com/user-attachments/assets/24348e3d-35fa-401b-adaa-72df8bfd47c3)
 
 Получаем следующие виртуальные машины:
 
-![изображение](https://github.com/user-attachments/assets/4a626561-64fd-4f19-8759-bc3bb722bb55)
+![изображение](https://github.com/user-attachments/assets/7fab0cec-bb6f-4ecf-a6d3-c8cefe272bdd)
 
-![изображение](https://github.com/user-attachments/assets/97e4f14c-20f2-4528-9ac0-3e3c85ac1133)
+![изображение](https://github.com/user-attachments/assets/fd138b53-a6b1-468b-9dba-0f40b60262a7)
