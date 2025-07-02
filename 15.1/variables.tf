@@ -73,8 +73,3 @@ variable "vms_resources" {
     },
   }
 }
-#variable "disk_volume" {        ###DISK vars
-#  type        = string
-#  default     = 1
-#  description = "additional disk size"
-#}

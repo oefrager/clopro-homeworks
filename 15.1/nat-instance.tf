@@ -24,6 +24,7 @@ resource "yandex_compute_instance" "nat-instance" {
   network_interface {
     subnet_id          = yandex_vpc_subnet.public.id
     ip_address         = "192.168.10.254"
+    nat                = true
   }
 
   metadata = local.metadata

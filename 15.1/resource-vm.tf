@@ -31,7 +31,6 @@ resource "yandex_compute_instance" "public" {
 }
 
 resource "yandex_compute_instance" "private" {
-  count       = 1
   name        = "private"
   hostname    = "private"
   platform_id = var.vms_resources.vm.platform_id
