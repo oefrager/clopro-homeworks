@@ -1,17 +1,13 @@
-#data "yandex_compute_image" "os" {
-##   image_id = var.vm_image_lamp
-#}
-
 resource "yandex_iam_service_account" "ig-sa" {
   name        = "instance-group-sa"
   description = "Service account for managing the instance group."
 }
 
 resource "yandex_resourcemanager_folder_iam_member" "compute_editor" {
-  folder_id  = var.folder_id
-  role       = "compute.editor"
-  member     = "serviceAccount:${yandex_iam_service_account.ig-sa.id}"
-  depends_on = [ yandex_iam_service_account.ig-sa, ]
+  folder_id   = var.folder_id
+  role        = "editor"
+  member      = "serviceAccount:${yandex_iam_service_account.ig-sa.id}"
+  depends_on  = [ yandex_iam_service_account.ig-sa, ]
 }
 
 resource "yandex_compute_instance_group" "group-vm" {
@@ -30,7 +26,7 @@ resource "yandex_compute_instance_group" "group-vm" {
     boot_disk {
       mode = "READ_WRITE"
       initialize_params {
-        image_id = var.vm_image_lamp #data.yandex_compute_image.os.image_id
+        image_id = var.vm_image_lamp
         type     = var.vms_resources.vm.type_hdd
       }
     }
@@ -40,11 +36,17 @@ resource "yandex_compute_instance_group" "group-vm" {
     network_interface {
       network_id = yandex_vpc_network.develop.id
       subnet_ids = ["${yandex_vpc_subnet.public.id}"]
-  #    subnet_id          = yandex_vpc_subnet.public.id
       nat                = true
     }
 
-    metadata = local.metadata
+    metadata = {
+      ssh-keys = "ubuntu:${local.ssh-keys}"
+      user-data  = <<EOF
+        !/bin/bash
+        cd /var/www/html
+        echo '<html><head><title>It's my picture</title></head> <body><h1></h1><img src="http://${yandex_storage_bucket.iam-bucket.bucket_domain_name}/DYGA.jpg"/></body></html>' > index.html
+        EOF
+    }
   }
   
   scale_policy {
@@ -60,6 +62,11 @@ resource "yandex_compute_instance_group" "group-vm" {
     max_expansion   = 0
   }
   
+  load_balancer {
+    target_group_name        = "target-group"
+    target_group_description = "Network Load Balancer"
+  }
+
   health_check {
     interval = 10
     timeout  = 5

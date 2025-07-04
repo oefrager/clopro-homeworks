@@ -40,7 +40,6 @@ variable "vpc_name_private" {
   description = "VPC network&subnet name"
 }
 
-
 ### HOST vars
 
 variable  "nat_image" {
