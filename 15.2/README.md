@@ -46,13 +46,12 @@
 
  - Создать [сетевой балансировщик]().
  
- ![изображение](https://github.com/user-attachments/assets/6ca4aaec-4cb0-46e4-9121-94dbca02b9b9)
- 
- ![изображение](https://github.com/user-attachments/assets/297ea0b0-5f90-470a-95b4-e70168615551)
+![изображение](https://github.com/user-attachments/assets/1b3158e3-ca38-40fb-8eac-9470afc71a58)
 
  - Проверить работоспособность, удалив одну или несколько ВМ.
 
 ![изображение](https://github.com/user-attachments/assets/69a6fefe-8ab8-4a8b-a476-ab9a5077efe6)
 
+![изображение](https://github.com/user-attachments/assets/316b5939-f6f3-495f-95cb-0ef321a0715f)
 
 4. (дополнительно)* Создать Application Load Balancer с использованием Instance group и проверкой состояния.
