@@ -19,10 +19,29 @@
 2. Создать группу ВМ в public подсети фиксированного размера с шаблоном LAMP и веб-страницей, содержащей ссылку на картинку из бакета:
 
  - Создать [Instance Group](resourse-vn.tf) с тремя ВМ и шаблоном LAMP. Для LAMP рекомендуется использовать `image_id = fd827b91d99psvq5fjit`.
+
+![изображение](https://github.com/user-attachments/assets/5bb58b32-5399-4227-a4c1-fad0eb9e8fab)
+
+![изображение](https://github.com/user-attachments/assets/61b7c98b-9e88-453b-92a0-1f8f9e98ed89)
+
  - Для создания стартовой веб-страницы рекомендуется использовать раздел `user_data` в [meta_data](https://cloud.yandex.ru/docs/compute/concepts/vm-metadata).
  - Разместить в стартовой веб-странице шаблонной ВМ ссылку на картинку из бакета.
+   ```
+      user-data  = <<EOF
+        !/bin/bash
+        cd /var/www/html
+        echo '<html><head><title>It's my picture</title></head> <body><h1></h1><img src="http://${yandex_storage_bucket.iam-bucket.bucket_domain_name}/DYGA.jpg"/></body></html>' > index.html
+        EOF
+   ```
  - Настроить проверку состояния ВМ.
- 
+   ```
+   health_check {
+     interval = 10
+     timeout  = 5
+     tcp_options {
+       port = 80
+   ```
+
 3. Подключить группу к сетевому балансировщику:
 
  - Создать сетевой балансировщик.
