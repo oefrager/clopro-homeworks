@@ -20,6 +20,8 @@
 
 <img width="627" height="818" alt="изображение" src="https://github.com/user-attachments/assets/1a046d74-2fbe-4c6c-9bc1-c1fcadc88e42" />
 
+
+
 2. Настроить с помощью Terraform кластер [Kubernetes](cluster_k8s.tf).
 
  - Используя настройки VPC из предыдущих домашних заданий, добавить дополнительно две подсети public в разных зонах, чтобы обеспечить отказоустойчивость.
@@ -39,8 +41,11 @@
   ```
 <img width="834" height="169" alt="изображение" src="https://github.com/user-attachments/assets/82c8af12-f77a-4c0c-a849-0f12f9a37470" />
 
- - *Запустить микросервис phpmyadmin и подключиться к ранее созданной БД.
+ - *Запустить микросервис [phpmyadmin](https://pikabu.ru/story/anekdot_na_zlobu_dnya_12989123.yaml) и подключиться к ранее созданной БД.
  - *Создать сервис-типы Load Balancer и подключиться к phpmyadmin. Предоставить скриншот с публичным адресом и подключением к БД.
+
+<img width="525" height="104" alt="изображение" src="https://github.com/user-attachments/assets/341ee73a-437c-4481-bccb-842c8194eb44" />
+
 
 Полезные документы:
 
