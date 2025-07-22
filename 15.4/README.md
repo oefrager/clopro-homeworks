@@ -1,7 +1,5 @@
 # Домашнее задание к занятию «Кластеры. Ресурсы под управлением облачных провайдеров»
 
----
-
 ## Задание 1. Yandex Cloud
 
 1. Настроить с помощью Terraform кластер баз данных [MySQL](cluster_db.tf).
@@ -20,7 +18,7 @@
 
 <img width="627" height="818" alt="изображение" src="https://github.com/user-attachments/assets/1a046d74-2fbe-4c6c-9bc1-c1fcadc88e42" />
 
-
+---
 
 2. Настроить с помощью Terraform кластер [Kubernetes](cluster_k8s.tf).
 
@@ -41,17 +39,9 @@
   ```
 <img width="834" height="169" alt="изображение" src="https://github.com/user-attachments/assets/82c8af12-f77a-4c0c-a849-0f12f9a37470" />
 
- - *Запустить микросервис [phpmyadmin](https://pikabu.ru/story/anekdot_na_zlobu_dnya_12989123.yaml) и подключиться к ранее созданной БД.
+---
+
+ - *Запустить микросервис [phpmyadmin](phpmyadmin.yaml) и подключиться к ранее созданной БД.
  - *Создать сервис-типы Load Balancer и подключиться к phpmyadmin. Предоставить скриншот с публичным адресом и подключением к БД.
 
 <img width="525" height="104" alt="изображение" src="https://github.com/user-attachments/assets/341ee73a-437c-4481-bccb-842c8194eb44" />
-
-
-Полезные документы:
-
-- [MySQL cluster](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/mdb_mysql_cluster).
-- [Создание кластера Kubernetes](https://cloud.yandex.ru/docs/managed-kubernetes/operations/kubernetes-cluster/kubernetes-cluster-create)
-- [K8S Cluster](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/kubernetes_cluster).
-- [K8S node group](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/kubernetes_node_group).
-
----
