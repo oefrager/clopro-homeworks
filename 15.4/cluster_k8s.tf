@@ -15,7 +15,6 @@ resource "yandex_kubernetes_cluster" "cluster_k8s" {
       zone      = var.public_subnets.public-d.zone
       subnet_id = yandex_vpc_subnet.public-d.id
     }
-    version   = "1.29"
     public_ip = true
   }
 

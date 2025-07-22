@@ -45,7 +45,9 @@ resource "yandex_mdb_mysql_user" "user_bd" {
   name       = local.user
   password   = local.password
   permission {
-    database_name = yandex_mdb_mysql_database.netology_db.id #"netology_db"
+    database_name = yandex_mdb_mysql_database.netology_db.name #"netology_db"
     roles         = [ "ALL" ]
   }
+  
+  depends_on = [ yandex_mdb_mysql_database.netology_db ]
 }
